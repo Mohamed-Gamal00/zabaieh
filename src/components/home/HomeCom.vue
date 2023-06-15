@@ -93,7 +93,7 @@ onMounted(async () => {
       </div>
     </div>
     <!-- about us 2 -->
-    <div class="container-fluid">
+    <div class="container-fluid py-3">
       <div class="row d-flex justify-content-center">
         <div class="col-md-11">
           <div class="row mb-0">

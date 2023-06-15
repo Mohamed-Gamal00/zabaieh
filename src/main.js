@@ -27,7 +27,6 @@ import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
 import VueSnip from 'vue-snip'
 library.add(fas, far, fab)
-
 const app = createApp(App)
 app.use(createPinia())
 app.use(VueSweetalert2)

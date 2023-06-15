@@ -11,19 +11,31 @@ const loading = ref('false')
 
 const articles = ref([])
 const fetchArticles = async () => {
-  try {
-    loading.value = true
-    const response = await axios.get('https://qrtas.almona.host/api/articles')
-    articles.value = response.data.articles
-    loading.value = false
-  } catch (error) {
-    if (error.message == 'Network Error') {
-      router.push({ name: 'servererror' })
-    }
-    else {
-      router.push({ name: 'articles' })
-    }
-  }
+  await axios
+    .get('https://qrtas.almona.host/api/articles')
+    .then((res) => {
+      loading.value = true
+      articles.value = res.data.articles
+      loading.value = false
+    })
+    .catch((err) => {
+      // router.beforeEach((to, from, next) => {
+      //   if (err.message == 'Network Error') {
+      //     next({ name: to.name }) // Redirect to the 'articles' page
+      //   } else {
+      //     next() // Continue with the navigation
+      //   }
+      // })
+      // Check if it's a server error
+      if (err.message == 'Network Error') {
+        console.log('true,there is error of net work')
+        router.push({ name: 'servererror' })
+        // Navigate to the server error page
+      } else {
+        console.log('false,there is No error of net work')
+        router.push({ name: 'articles' })
+      }
+    })
 }
 
 onMounted(fetchArticles)
