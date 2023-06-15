@@ -14,7 +14,7 @@ onMounted(fetchlinks)
 <template>
   <div
     class="container-fluid mt-5"
-    style="background: linear-gradient(266.56deg, #19282c 12.27%, #294159 77.29%); direction: rtl"
+    style="background: linear-gradient(266.56deg, #2D7560 12.27%, #359277 77.29%); direction: rtl"
   >
     <div class="row d-flex justify-content-center">
       <div class="col-md-12">
@@ -30,7 +30,7 @@ onMounted(fetchlinks)
                       <span class="">
                         <img loading="lazy" :src="links.logo" width="100" height="100" alt="img" />
                       </span>
-                      <p>
+                      <p class="mt-lg-3">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                         مولد النص العربى
                       </p>
@@ -165,7 +165,7 @@ onMounted(fetchlinks)
                               target="_blank"
                               aria-label="linkedin"
                               href="#"
-                              style="background-color: #2D7560"
+                              style="background-color: #cea539"
                               ><FontAwesome :icon="['fab', 'whatsapp']"
                             /></a>
                           </div>
@@ -180,7 +180,7 @@ onMounted(fetchlinks)
               </div>
               <div class="container mt-3 mt-lg-4">
                 <div class="row">
-                  <div class="col-md-12 text-center mb-3 mb-md-0">
+                  <div class="col-md-12 fs-14 text-center mb-3 mb-md-0">
                     <p>جميع الحقوق محفوظة لموقع &copy; Almona 2023</p>
                   </div>
                 </div>
@@ -223,17 +223,17 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #2D7560; */
+  /* background-color: #CEA539; */
   border: 1px solid rgb(0 0 0 / 10%) !important;
   transition: 0.5s;
 }
 
 .btnn.btn-social:hover {
-  background-color: #2D7560;
+  background-color: #cea539;
   color: black;
 }
 .btnn.btn-social:focus {
-  background-color: #2D7560;
+  background-color: #cea539;
 }
 
 .btn_btn_link {

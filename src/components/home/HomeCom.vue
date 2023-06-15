@@ -1,32 +1,10 @@
 <script setup>
 import axios from 'axios'
 import ContactCom from '@/components/contact/ContactCom.vue'
+import AboutCom from '@/components/about/AboutCom.vue'
 import ArticlesCom from '@/components/articles/ArticlesCom.vue'
-import { ref, onMounted, reactive } from 'vue'
-const aboutus = reactive([
-  {
-    id: 1,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
-  },
-  {
-    id: 2,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
-  },
-  {
-    id: 3,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
-  },
-  {
-    id: 4,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
-  }
-  // Add more articles as needed
-])
-
+import ServicesCom from '@/components/services/ServicesCom.vue'
+import { ref, onMounted } from 'vue'
 const articles = ref([])
 const fetchArticles = async () => {
   try {
@@ -56,7 +34,7 @@ onMounted(async () => {
         <div class="col-md-11">
           <div class="row align-items-center justify-content-around mb-2">
             <div class="col-lg-5 fw-bold align-middle text-center text-lg-end">
-              <p>قرطاس</p>
+              <p>ذبائح</p>
               <h1 class="mb-4 fw-bold" style="font-weight: 900 !important">
                 توصيل الخدمات المنزلية
               </h1>
@@ -70,7 +48,7 @@ onMounted(async () => {
                 :to="{ name: 'contact' }"
                 class="btn fw-bold text-white rounded-3 text-black ps-lg-4 pe-lg-4 px-5"
                 style="
-                  background: linear-gradient(266.56deg, #2D7560 12.27%, #359277 77.29%);
+                  background: linear-gradient(266.56deg, #2d7560 12.27%, #359277 77.29%);
                   padding-top: 0.5rem !important;
                   padding-bottom: 0.8rem !important;
                 "
@@ -115,85 +93,37 @@ onMounted(async () => {
       </div>
     </div>
     <!-- about us 2 -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid">
       <div class="row d-flex justify-content-center">
         <div class="col-md-11">
+          <div class="row mb-0">
+            <div>
+              <strong>
+                <h2 class="text-center">من نحن</h2>
+              </strong>
+              <p class="text-center">تعرف علي ما نقدمة بمزيد من التفاصيل التوضيحية</p>
+            </div>
+          </div>
           <div class="row align-items-center justify-content-around mb-2">
-            <div class="col-lg-6 text-center mt-sm-4">
-              <img
-                format="webp"
-                loading="lazy"
-                class="img-fluid rounded-3"
-                src="@/assets/images/about.png"
-                alt="img"
-              />
-            </div>
-            <div class="col-lg-6 fw-bold align-middle text-center text-lg-end">
-              <ul class="p-0">
-                <li class="my-3" v-for="item in aboutus" :key="item.id" style="list-style: none">
-                  <div class="row">
-                    <div class="col-1 align-middle align-self-center">
-                      <span><FontAwesome :icon="['fas', 'tag']" class="text-yellow" /> </span>
-                    </div>
-                    <div class="col-11">
-                      <span class="text-muted fs-14"> {{ item.title }} </span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <AboutCom />
           </div>
         </div>
       </div>
     </div>
     <!-- خدماتنا 2 -->
-    <div class="container-fluid py-5">
-      <div class="row d-flex justify-content-center">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center" style="background: rgba(132, 159, 35, 0.09)">
         <div class="col-md-11">
-          <div class="row mb-5">
+          <div class="row mb-0">
             <div>
               <strong>
-                <h2 class="text-center">خدماتنا</h2>
+                <h2 class="text-center mt-lg-2">خدماتنا</h2>
               </strong>
               <p class="text-center">تعرف علي ما نقدمة بمزيد من التفاصيل التوضيحية</p>
             </div>
           </div>
-          <div
-            class="row align-items-center justify-content-around mb-2"
-            style="background: rgba(132, 159, 35, 0.09)"
-          >
-            <div class="col-lg-5 fw-bold align-middle text-center text-lg-end">
-              <h1 class="mb-4 fw-bold" style="font-weight: 900 !important">
-                ريح لتوصيل الطلبات بمكة
-              </h1>
-              <p class="fs-14">
-                ريح تطبيق توصيل الطلبات يهدف لتوفير خدمة توصيل الطلبات إلى العملاء بمكة بكل سهولة
-                ويسر، يتيح التطبيق طلب مجموعة متنوعة من المنتجات من المتاجر المحلية والمطاعم
-                والصيدليات وغيرها، ويقوم فريق التطبيق بتوصيل الطلبات إلى المنزل أو المكتب في أسرع
-                وقت ممكن.
-              </p>
-              <button class="btn m-0 p-0">
-                <router-link
-                  :to="{ name: 'contact' }"
-                  class="btn fw-bold text-white rounded-3 text-black ps-lg-4 pe-lg-4 px-5"
-                  style="
-                    background: linear-gradient(266.56deg, #2D7560 12.27%, #359277 77.29%);
-                    padding-top: 0.5rem !important;
-                    padding-bottom: 0.8rem !important;
-                  "
-                  >تواصل معنا</router-link
-                >
-              </button>
-            </div>
-            <div class="col-lg-6 text-center mt-sm-4 text-lg-start">
-              <img
-                class="img-fluid rounded-3"
-                src="@/assets/images/service.png"
-                alt="img"
-                format="webp"
-                loading="lazy"
-              />
-            </div>
+          <div class="row align-items-center justify-content-around mb-2">
+            <ServicesCom />
           </div>
         </div>
       </div>
@@ -267,8 +197,16 @@ onMounted(async () => {
       </div>
     </section>
     <!-- articles 3 blog-->
-    <section class="py-3">
-      <div class="container-fluid">
+    <section class="container-fluid py-3 mt-lg-5">
+      <div class="row mb-3">
+        <div>
+          <strong>
+            <h2 class="text-center">المدونة</h2>
+          </strong>
+          <p class="text-center">تعرف علي اخر اخبار تطبيق قرطاس</p>
+        </div>
+      </div>
+      <div class="container">
         <div class="row">
           <ArticlesCom
             class="col-md-6"
@@ -276,19 +214,19 @@ onMounted(async () => {
             :key="article.id"
             :article="article"
           />
-        </div>
-        <div class="row text-center">
-          <div class="mt-3 mt-lg-5">
-            <router-link
-              :to="{ name: 'articles' }"
-              class="btn fw-bold text-white rounded-3 text-black ps-lg-4 pe-lg-4 px-5"
-              style="
-                background: linear-gradient(180deg, #225e66 0%, #294159 100%);
-                padding-top: 0.5rem !important;
-                padding-bottom: 0.8rem !important;
-              "
-              >مشاهدة الكل</router-link
-            >
+          <div class="row text-center">
+            <div class="mt-3 mt-lg-5">
+              <router-link
+                :to="{ name: 'articles' }"
+                class="btn fw-bold text-white rounded-3 text-black ps-lg-4 pe-lg-4 px-5"
+                style="
+                  background: #cea539;
+                  padding-top: 0.5rem !important;
+                  padding-bottom: 0.8rem !important;
+                "
+                >مشاهدة الكل</router-link
+              >
+            </div>
           </div>
         </div>
       </div>

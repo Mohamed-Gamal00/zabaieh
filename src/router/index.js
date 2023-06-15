@@ -36,7 +36,18 @@ const router = createRouter({
       path: '/articles/article/:id',
       name: 'article',
       component: () => import('../views/articles/ArticleView.vue')
-    }
+    },
+    {
+      path: '/server-erro',
+      name: 'servererror',
+      component: () => import('../views/ServerError.vue')
+    },
+    {
+      path: "/:catchAll(.*)*",
+      name: "errorpage",
+      component: () =>
+        import(/* webpackChunkName: "errorpage" */ "../views/ErrorView.vue"),
+    },
   ]
 })
 
