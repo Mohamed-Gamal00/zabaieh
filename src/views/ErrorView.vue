@@ -89,7 +89,7 @@ export default {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .error .four_zero_four_bg {
-    background-image: url("@/assets/errrgif.gif");
+    background-image: url("@/assets/images/errrgif.gif");
     height: 300px;
     background-size: cover;
     background-position: center;

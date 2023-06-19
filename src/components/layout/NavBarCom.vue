@@ -1,23 +1,40 @@
 <script setup>
+// import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
-
+// import router from '../../router'
+// const handelSignOut = () => {
+//   signOut(auth).then(()=>{
+//     router.push("/");
+//   })
+// }
+// const isLoggedIn = ref('false')
 const links = ref([])
 const fetchlinks = async () => {
   await axios.get('https://qrtas.almona.host/api/link').then((res) => {
     links.value = res.data.data
   })
 }
-onMounted(fetchlinks)
+// let auth
+onMounted(async () => {
+  // auth = getAuth
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     isLoggedIn.value = true
+  //   } else {
+  //     isLoggedIn.value = false
+  //   }
+  // })
+  await Promise.all([fetchlinks()])
+})
 
 const route = useRoute()
 
 const scroll = () => {
   window.scrollTo(0, 0)
 }
-
 
 watch(
   () => route.path,
@@ -89,26 +106,18 @@ watch(
             :to="{ name: 'contact' }"
             class="btn fw-bold text-white rounded-3 text-black ps-lg-4 pe-lg-4 px-5"
             style="
-              background: linear-gradient(266.56deg, #2D7560 12.27%, #359277 77.29%);
+              background: linear-gradient(266.56deg, #2d7560 12.27%, #359277 77.29%);
               padding-top: 0.5rem !important;
               padding-bottom: 0.8rem !important;
             "
             >تواصل معنا</router-link
           >
+          <!-- <button @click="handelSignOut" v-if="isLoggedIn" class="btn">sign up</button> -->
         </div>
       </div>
     </nav>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'NavBarCom',
-  mounted() {
-    window.scrollTo(0, 0)
-  }
-}
-</script>
 
 <style scoped>
 .style {
@@ -122,10 +131,10 @@ export default {
   transition: all 0.3s ease-in-out;
 }
 .nav a:hover {
-  color: #2D7560 !important;
+  color: #2d7560 !important;
 }
 .nav .router-link-exact-active {
-  color: #2D7560 !important;
+  color: #2d7560 !important;
 }
 .navbar-toggler {
   padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
