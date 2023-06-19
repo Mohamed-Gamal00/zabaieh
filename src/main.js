@@ -27,25 +27,6 @@ import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
 import VueSnip from 'vue-snip'
 library.add(fas, far, fab)
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBGfIPkz3Qfr9JAZlVIO31CabZiGFMlLX0",
-  authDomain: "zabaieh-7932f.firebaseapp.com",
-  projectId: "zabaieh-7932f",
-  storageBucket: "zabaieh-7932f.appspot.com",
-  messagingSenderId: "199155596868",
-  appId: "1:199155596868:web:57d4b5a5fcab93985b4611"
-};
-
-// Initialize Firebase
- initializeApp(firebaseConfig);
-
 const app = createApp(App)
 app.use(createPinia())
 app.use(VueSweetalert2)
