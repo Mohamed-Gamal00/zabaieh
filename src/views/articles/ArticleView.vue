@@ -21,21 +21,25 @@ onMounted(fetchArticle)
   <div v-if="loading">
     <PageLoder />
   </div>
-  <div class="container">
-    <div class="row">
-      <header class="header">
-        <img :src="article.banner" class="img-fluid" alt="img" />
-      </header>
-    </div>
-  </div>
-  <div class="container-fluid mb-5 pb-5">
+  <div class="container-fluid my-5 py-5">
     <div class="row d-flex justify-content-center">
-      <div class="col-md-10">
+      <div class="col-md-4">
+        <div class="row">
+          <header class="header">
+            <img :src="article.banner" style="object-fit: cover" class="img-fluid" alt="img" />
+          </header>
+        </div>
+      </div>
+      <div class="col-md-6">
         <div class="row mb-2 align-items-center">
           <div class="container">
             <article style="direction: rtl">
               <div class="my-3">
-                <span class="pub-date">تاريخ النشر.{{ article.date }}</span>
+                <span
+                  ><FontAwesome :icon="['far', 'clock']" class="ps-2 text-yellow" />
+                  <span class="text-yellow"> {{ article.date }}</span>
+                </span>
+                <!-- <span class="pub-date text-yellow">تاريخ النشر.{{ article.date }}</span> -->
               </div>
               <h1 class="my-3">
                 {{ article.title }}

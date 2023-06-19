@@ -33,16 +33,14 @@ onMounted(async () => {
       <div class="row d-flex justify-content-center">
         <div class="col-md-11">
           <div class="row align-items-center justify-content-around mb-2">
-            <div class="col-lg-5 fw-bold align-middle text-center text-lg-end">
+            <div class="col-lg-4 fw-bold align-middle text-center text-lg-end">
               <p>ذبائح</p>
               <h1 class="mb-4 fw-bold" style="font-weight: 900 !important">
-                توصيل الخدمات المنزلية
+                خدمات فائقة الجودة بمجال الثروة الحيوانية
               </h1>
               <p class="fs-14">
-                ريح تطبيق توصيل الطلبات يهدف لتوفير خدمة توصيل الطلبات إلى العملاء بمكة بكل سهولة
-                ويسر، يتيح التطبيق طلب مجموعة متنوعة من المنتجات من المتاجر المحلية والمطاعم
-                والصيدليات وغيرها، ويقوم فريق التطبيق بتوصيل الطلبات إلى المنزل أو المكتب في أسرع
-                وقت ممكن.
+                عليك الآن أن تختار من بين مجموعة متنوعة من أنواع الحيوانات سواء أن كانت ماعز أو
+                ابقار متنوعه من خلال خدمة التوصيل السريع مع فريق من المختصين .
               </p>
               <router-link
                 :to="{ name: 'contact' }"
@@ -82,8 +80,8 @@ onMounted(async () => {
                 class="img-fluid rounded-3"
                 src="@/assets/images/home-img.png"
                 alt="img"
-                width="492"
-                height="492"
+                width="460"
+                height="460"
                 format="webp"
                 loading="lazy"
               />
@@ -96,12 +94,16 @@ onMounted(async () => {
     <div class="container-fluid py-3">
       <div class="row d-flex justify-content-center">
         <div class="col-md-11">
-          <div class="row mb-0">
-            <div>
-              <strong>
-                <h2 class="text-center">من نحن</h2>
-              </strong>
-              <p class="text-center">تعرف علي ما نقدمة بمزيد من التفاصيل التوضيحية</p>
+          <div class="row mb-0 justify-content-center">
+            <div class="col-md-6">
+              <div>
+                <h2 class="text-center">
+                  <strong> من نحن </strong>
+                </h2>
+                <p class="text-center fw-bold fs-14" style="color: #858585">
+                  ذبائح هو التطبيق المثالي للعثور على الحيوانات المثالية للشراء أو للتضحية
+                </p>
+              </div>
             </div>
           </div>
           <div class="row align-items-center justify-content-around mb-2">
@@ -116,10 +118,10 @@ onMounted(async () => {
         <div class="col-md-11">
           <div class="row mb-0">
             <div>
-              <strong>
-                <h2 class="text-center mt-lg-2">خدماتنا</h2>
-              </strong>
-              <p class="text-center">تعرف علي ما نقدمة بمزيد من التفاصيل التوضيحية</p>
+              <h2 class="text-center mt-lg-2"><strong> خدمتنا </strong></h2>
+              <p class="text-center fw-bold fs-14" style="color: #858585">
+                تعرف علي ما نقدمة بمزيد من التفاصيل التوضيحية
+              </p>
             </div>
           </div>
           <div class="row align-items-center justify-content-around mb-2">

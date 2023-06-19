@@ -4,28 +4,26 @@ const aboutus = reactive([
   {
     id: 1,
     title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
+      'ذبائح هو فريق من المتخصصين من ذوي الخبرة متخصصون في توفير أعلى جودة من الماشية التي تناسبك التضحية بعيد االضحي المبارك.'
   },
   {
     id: 2,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
+    title: 'لدينا فريق مدرب على اختيار أنسب الحيوانات والتي تلبي جميع المتطلبات الدينية .'
   },
   {
     id: 3,
-    title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
+    title: 'نضمن لك الحصول على أفضل الحيوانات .'
   },
   {
     id: 4,
     title:
-      'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى ..'
+      'ذبائح يساعدك أيضاً علي جعل الذبح مثالي سواء كنت تبحث عن شراء حيوانات أو ذبحها . فإن تطبيق ذبائح هنا لمساعدتك .'
   }
   // Add more articles as needed
 ])
 </script>
 <template>
-  <div class="container-fluid py-lg-3">
+  <div class="container-fluid py-lg-3" dir="rtl">
     <div class="row d-flex justify-content-center">
       <div class="col-md-11">
         <div class="row align-items-center justify-content-around mb-2">
@@ -43,7 +41,10 @@ const aboutus = reactive([
               <li class="my-3" v-for="item in aboutus" :key="item.id" style="list-style: none">
                 <div class="row">
                   <div class="col-1 align-middle align-self-center">
-                    <span><FontAwesome :icon="['fas', 'tag']" class="text-yellow" /> </span>
+                    <span>
+                      <img src="../../assets/images/icon.png" alt="">
+                      <!-- <FontAwesome :icon="['fas', 'tag']" class="text-yellow" />  -->
+                    </span>
                   </div>
                   <div class="col-11">
                     <span class="text-muted fs-14"> {{ item.title }} </span>

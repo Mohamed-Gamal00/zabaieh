@@ -14,7 +14,7 @@ onMounted(fetchlinks)
 <template>
   <div
     class="container-fluid mt-5"
-    style="background: linear-gradient(266.56deg, #2D7560 12.27%, #359277 77.29%); direction: rtl"
+    style="background: linear-gradient(266.56deg, #2d7560 12.27%, #359277 77.29%); direction: rtl"
   >
     <div class="row d-flex justify-content-center">
       <div class="col-md-12">
@@ -25,14 +25,14 @@ onMounted(fetchlinks)
               <div class="container-fluid">
                 <div class="row d-flex justify-content-lg-around">
                   <!--qurtas-->
-                  <div class="col-md-6 col-lg-3 text-center text-lg-end">
+                  <div class="col-md-6 col-lg-4 text-center text-lg-end">
                     <div style="position: relative; bottom: 30px">
                       <span class="">
                         <img loading="lazy" :src="links.logo" width="100" height="100" alt="img" />
                       </span>
                       <p class="mt-lg-3">
-                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
-                        مولد النص العربى
+                        عليك الآن أن تختار من بين مجموعة متنوعة من أنواع الحيوانات سواء أن كانت ماعز
+                        أو ابقار متنوعه من خلال خدمة التوصيل السريع مع فريق من المختصين .
                       </p>
                     </div>
                     <div class="d-flex justify-content-center justify-content-lg-start pt-2">
@@ -120,20 +120,26 @@ onMounted(fetchlinks)
                       style="width: 100%; background-color: transparent"
                     >
                       <div class="card-body text-white">
-                        <p class="card-title fs-16 fw-bold">
+                        <p class="card-title fs-16 fw-bold mb-0">
                           <FontAwesome class="ms-2" :icon="['far', 'envelope']" />البريد الالكتروني
                         </p>
-                        <p class="card-text fs-14 p-0">{{ links.email }}</p>
-                        <p class="card-title fs-16 fw-bold">
+                        <p class="card-text fs-14 p-0 " style="color: #c2c2c2 !important">
+                          {{ links.email }}
+                        </p>
+                        <p class="card-title fs-16 fw-bold mb-0">
                           <FontAwesome class="ms-2 fs-16" icon="phone-volume" />
                           رقم الجوال
                         </p>
-                        <p class="card-text fs-14">{{ links.number }}</p>
-                        <p class="card-title fs-16 fw-bold">
+                        <p class="card-text fs-14" style="color: #c2c2c2 !important">
+                          {{ links.number }}
+                        </p>
+                        <p class="card-title fs-16 fw-bold mb-0">
                           <FontAwesome class="ms-2 fs-16" icon="location-dot" />
                           العنوان
                         </p>
-                        <p class="card-text fs-14">{{ links.address }}</p>
+                        <p class="card-text fs-14" style="color: #c2c2c2 !important">
+                          {{ links.address }}
+                        </p>
                       </div>
                     </div>
 
